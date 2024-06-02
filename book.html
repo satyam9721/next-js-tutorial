@@ -1,1 +1,12 @@
 header and footer section is created in layout.tsx file.
+//making the direct routes from home page file page.tsx
+
+import Link from "next/link";
+export default function Home() {
+  return (
+<>
+<h1>Satyam</h1>
+<Link href="/blog">Blog</Link>
+</>
+);
+}
