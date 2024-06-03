@@ -99,7 +99,7 @@ export default function OrderProduct() {
     router.push("/");
   };
 
-  return (
+ return (
     <>
       <h1>Order Product</h1>
       <button onClick={handleClick}>Place order</button>
@@ -115,5 +115,27 @@ export default function Loading(){
     return <h1>Loading</h1>
 }
 
+//not-found.tsx 
+when noting is there then it's shows
 
-  
+export default function NotFound() {
+    return (
+      <div>
+        <h2>Review not found</h2>
+      </div>
+    );
+  }
+//error.tsx file , display custom error, without affecting the whole ui.
+
+"use client"
+export default function ErrorBoundary(){
+    return (<div>
+        Error in reviewId
+    </div>)
+}
+
+"use client";
+export default function ErrorBoundary({ error }: { error: Error }) {
+  return <div>{error.message}</div>;
+}
+
