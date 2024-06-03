@@ -10,3 +10,104 @@ export default function Home() {
 </>
 );
 }
+
+//create the two router
+  import Link from "next/link";
+
+export default function Home() {
+  return (
+<>
+<h1>Satyam</h1>
+<Link href="/blog">Blog</Link>
+<Link href="/products">Products</Link>
+</>
+ );
+}
+//creating home routes products 's main page.tsx file
+  import Link from "next/link"
+
+export default function product(){
+    return(
+        <>
+        <Link href="/">Home</Link>
+        <h1>Product List</h1>
+        <ul className="li">Product 1</ul>
+        <ul className="li">Product 2</ul>
+        <ul className="li">Product 3</ul>
+        
+        </>
+    )
+}
+
+//creating navigation to dynamic routes (created routes for each products)
+import Link from "next/link"
+
+export default function product(){
+    return(
+        <>
+        <Link href="/">Home</Link>
+        <h1>Product List</h1>
+        <h2>
+            <Link href="products/1">Product 1</Link>
+        </h2>
+        <h2>
+            <Link href="products/2">Product 2</Link>
+        </h2>
+        <h2>
+            <Link href="products/3">Product 3</Link>
+        </h2>
+        
+        </>
+    )
+}
+//custom dynamic routes
+import Link from "next/link"
+
+export default function product(){
+     const productId =100;
+    return(
+       
+        <>
+        <Link href="/">Home</Link>
+        <h1>Product List</h1>
+        <h2>
+            <Link href="products/1">Product 1</Link>
+        </h2>
+        <h2>
+            <Link href="products/2">Product 2</Link>
+        </h2>
+        <h2>
+            <Link href="products/3">Product 3</Link>
+        </h2>
+        <h2>
+        <Link href={`products/${productId}`}>Product {productId}</Link>
+        </h2>
+
+        </>
+    )
+}
+//navagating programately to home page
+
+"use client";
+import { useRouter } from "next/navigation";
+
+export default function OrderProduct() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    console.log("Order Placed");
+    router.push("/");
+  };
+
+  return (
+    <>
+      <h1>Order Product</h1>
+      <button onClick={handleClick}>Place order</button>
+    </>
+  );
+}
+
+
+
+
+  
